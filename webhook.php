@@ -1,6 +1,6 @@
 <?php
 
-$channelAccessToken = 'ZcAdQPxOsDqu9ElSDREFslC0IG/zxYIFuZ9PjYnG8YAnMRcSMD66wyQkiIXwzSBR5lQuU1hcrnSZiaPJ8pb94OPHPpaomTyqIaXu4nBsr9fylsDqdBFuo+5j7hYVtpv+/MThJvPMGtehTuskbAGgGwdB04t89/1O/w1cDnyilFU='; // Access Token ค่าที่เราสร้างขึ้น
+$channelAccessToken = 'gyySmJv213EDMmMk+jgn/85iBtMwa+KYh3dMAud33GnDEYYAlvxR6g73/xO017IgfBC0wyrnRd+L8F7zJmu+MwjZtvfjr35+ujuZMOgZaB1eBptgmAvr2iEgKQ8zv94ntspjc9XFvzClL1s7MNco4gdB04t89/1O/w1cDnyilFU='; // Access Token ค่าที่เราสร้างขึ้น
 
 $request = file_get_contents('php://input');   // Get request content
 
@@ -14,23 +14,23 @@ foreach ($request_json['events'] as $event)
 		{
 			$text = $event['message']['text'];
 			
-			if(($text == "รถแบบผมเข้าพิกัดเสียภาษีหรือไหมครับ") || ($text == "รถแบบนี้เข้าพิกัดเสียภาษีหรือไหมครับ") ){
+			if(($text == "คุณเป็นสัตว์กินเนื้อหรือเปล่า") || ($text == "คุณเป็นสัตว์เลือดเย็นหรือเปล่า") ){
 				$number = rand(0,1);
 				if($number == 0){
-					$reply_message = 'อยู่พิกัดการเสียภาษี (ผลิต/ดัดแปลงสภาพรถยนต์หรือยานพาหนะ)'; 
+					$reply_message = 'ใช่ฮะ เราเป็นแบบนั้นแหละ'; 
 				}else{
-					$reply_message = 'ไม่อยู่พิกัดการเสียภาษี!!!'; 
+					$reply_message = 'อยากลองดูไหมละ หึหึ'; 
 				}
 				
 			}else{
-				$reply_message = 'ฉันได้รับข้อความ "'. $text.'" ของคุณแล้ว!';
+				$reply_message = 'อ่านละนะ "'. $text.'" รอสักครู่ฮะ';
 			}			
 		} else {
-			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
+			$reply_message = 'อ่านละนะ "'.$event['message']['type'].'" รอสักครู่ฮะ';
 		}
 		
 	} else {
-		$reply_message = 'ฉันได้รับ Event "'.$event['type'].'" ของคุณแล้ว!';
+		$reply_message = 'อ่านละนะ Event "'.$event['type'].'" รอสักครู่ฮะ';
 	}
 	
 	// reply message
