@@ -17,7 +17,8 @@ foreach ($request_json['events'] as $event)
 			$texts = explode(" ", $text);
 			
 			if($text == "@บอท" || $texts[0] == "@บอท"){
-				$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";				
+				$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";
+				$reply_message .= "พิมพ์ว่า \"ขายสุรายาสูบและไพ่\"\n";
 				$reply_message .= "พิมพ์ว่า \"พิกัดอัตราภาษีสรรพสามิต\"\n";
 				$reply_message .= "พิมพ์ว่า \"อัตราภาษีสรรพสามิตรถยนต์\"\n";
 				$reply_message .= "พิมพ์ว่า \"ขั้นตอนการขอใบอนุญาตขายสุรา\"\n";
